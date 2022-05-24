@@ -1,7 +1,7 @@
 // data json
 async function dataJson(){    
     try {
-        const response = await fetch('../assets/books.json');
+        const response = await fetch('./assets/books.json');
         if (!response.ok) {
           const message = `An error has occured: ${response.status}`;
           throw new Error(message);
