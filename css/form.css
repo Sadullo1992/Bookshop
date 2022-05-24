@@ -1,0 +1,65 @@
+form {
+    display: none;
+    margin: 50px;
+}
+.form-container {
+    padding: 20px 30px;
+    width: 500px;
+    margin: 0 auto;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-grey);
+    box-shadow: 0px 4px 15px 5px rgba(0, 184, 224, 0.1);
+    border-radius: 15px;
+}
+form h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+form p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.input {
+    padding: 5px 10px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;   
+    outline: 0;
+}
+.input:focus {
+    border: 1px solid var(--color-primary);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    margin: 7px 7px 1px 15px;
+    vertical-align: bottom;
+}
+p:last-of-type {
+    margin-top: 10px;
+}
+form .btn {
+    margin-top: 50px;
+}
+
+form span {
+    color: red;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.summury-container {
+    margin: 50px 20px;
+    width: 100%;
+    text-align: center;
+}
+.summury-container h1 {
+    margin-bottom: 40px;
+}
+.summury-container p {
+    margin-bottom: 10px;
+}
+
