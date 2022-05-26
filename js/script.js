@@ -41,6 +41,13 @@ function Header(books = []) {
     let shoppingCartPhoto = document.createElement('div');
     shoppingCartPhoto.classList.add('shopping-cart-photo');
     shoppingCartPhoto.addEventListener('click', shoppingCartModal);
+    shoppingCartPhoto.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    });
+    shoppingCartPhoto.addEventListener('drop', (e) => {
+        let data = e.dataTransfer.getData('title');
+        addToCart(data);
+    });
 
     let orderCount = document.createElement('div');
     orderCount.classList.add('order-count');    
@@ -111,6 +118,12 @@ function BookItem(author, imageLink, title, price, description) {
 
     let bookItem = document.createElement('div');
     bookItem.classList.add('book-item');
+    bookItem.setAttribute('title', 'Draggable');
+    bookItem.setAttribute('draggable', 'true');
+    bookItem.addEventListener('dragstart', (e) => {
+        e.stopPropagation();
+        e.dataTransfer.setData('title', title);
+    });
 
     let img = document.createElement('img');
     img.setAttribute('src', imageLink);
