@@ -104,6 +104,7 @@ inputPack.setAttribute('type', 'checkbox');
 inputPack.setAttribute('id', 'pack');
 inputPack.setAttribute('value', 'pack as a gift');
 inputPack.setAttribute('name', 'gifts');
+inputPack.addEventListener('input', () => giftsOption());
 
 let labelPack = document.createElement('label');
 labelPack.setAttribute('for', 'pack');
@@ -114,6 +115,7 @@ inputPostcard.setAttribute('type', 'checkbox');
 inputPostcard.setAttribute('id', 'postcard');
 inputPostcard.setAttribute('value', 'add postcard');
 inputPostcard.setAttribute('name', 'gifts');
+inputPostcard.addEventListener('input', () => giftsOption());
 
 let labelPostcard = document.createElement('label');
 labelPostcard.setAttribute('for', 'postcard');
@@ -124,6 +126,7 @@ inputDiscount.setAttribute('type', 'checkbox');
 inputDiscount.setAttribute('id', 'discount');
 inputDiscount.setAttribute('value', 'provide 2% discount to the next time');
 inputDiscount.setAttribute('name', 'gifts');
+inputDiscount.addEventListener('input', () => giftsOption());
 
 let labelDiscount = document.createElement('label');
 labelDiscount.setAttribute('for', 'discount');
@@ -134,6 +137,7 @@ inputPen.setAttribute('type', 'checkbox');
 inputPen.setAttribute('id', 'pen');
 inputPen.setAttribute('value', 'branded pen or pencil');
 inputPen.setAttribute('name', 'gifts');
+inputPen.addEventListener('input', () => giftsOption());
 
 let labelPen = document.createElement('label');
 labelPen.setAttribute('for', 'pen');
@@ -310,6 +314,23 @@ function paymentTypeValidation(e) {
         paymentTypeIsValid = false; 
     }
     enableButton();
+}
+
+// Only two gift options are allowed
+const gifts = document.querySelectorAll('input[name="gifts"]');   
+gifts.forEach(e => e);
+const arrGifts = [...gifts].map(e => e);
+function giftsOption() {
+    const arrChecked = arrGifts.filter(item => item.checked);
+    if(arrChecked.length === 2) {
+        arrGifts.filter(item => !item.checked).forEach(item => {
+            item.disabled = true;
+        });
+    } else {
+        arrGifts.forEach(item => {
+            item.disabled = false;
+        });
+    }
 }
 
 // Oreder Summurize name, surname, date, street, house, flat, type
