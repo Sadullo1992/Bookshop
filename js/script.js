@@ -180,7 +180,7 @@ function descModal(author, imageLink, title, description){
     modalClose.classList.add('modal-close');
     modalClose.addEventListener('click', ()=> {
         document.body.style.overflow = 'visible';
-        modal.style.display = 'none';
+        modal.remove();
     });
 
     let imgClose = document.createElement('img');
