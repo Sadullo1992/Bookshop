@@ -1,8 +1,4 @@
-# Bookshop
-
-[https://sadullo1992.github.io/Bookshop/](https://sadullo1992.github.io/Bookshop/)
-
-# BookShop - interactive book store
+# BookShop - book store
 
 
 [Demo link](https://sadullo1992.github.io/Bookshop/).
